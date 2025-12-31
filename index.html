@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy New Year 2026 ✨</title>
+
+<!-- Google Fonts - Optimized -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&family=Pacifico&display=swap" rel="stylesheet">
+<!-- Google Material Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- Simplifica Font -->
+<style>
+@font-face {
+    font-family: "Simplifica";
+    src: url("https://db.onlinewebfonts.com/t/e6179e1f05c79cd3258c733e532b4011.eot");
+    src: url("https://db.onlinewebfonts.com/t/e6179e1f05c79cd3258c733e532b4011.eot?#iefix") format("embedded-opentype"),
+         url("https://db.onlinewebfonts.com/t/e6179e1f05c79cd3258c733e532b4011.woff2") format("woff2"),
+         url("https://db.onlinewebfonts.com/t/e6179e1f05c79cd3258c733e532b4011.woff") format("woff"),
+         url("https://db.onlinewebfonts.com/t/e6179e1f05c79cd3258c733e532b4011.ttf") format("truetype"),
+         url("https://db.onlinewebfonts.com/t/e6179e1f05c79cd3258c733e532b4011.svg#Simplifica") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+</style>
+
+<style>
+/* RESET & BASE */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg-main:radial-gradient(circle at top,#111827 0%,#020617 40%,#020617 100%);
+  --accent:#facc15;
+  --text-main:#f9fafb;
+  --text-muted:#9ca3af;
+  --card-bg:rgba(15,23,42,0.9);
+  --border-subtle:rgba(148,163,184,0.25);
+  --shadow-soft:0 22px 55px rgba(15,23,42,0.85);
+  --radius-lg:22px;
+  --radius-full:999px;
+}
+html,body{height:100%;scroll-behavior:smooth}
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--bg-main);
+  color:var(--text-main);
+  overflow-x:hidden;
+}
+
+/* ENHANCED STARFIELD */
+.star-field{position:fixed;inset:0;overflow:hidden;z-index:1;pointer-events:none;}
+.star{position:absolute;width:4px;height:4px;border-radius:50%;background:rgba(248,250,252,0.9);box-shadow:0 0 10px rgba(250,204,21,0.95);opacity:0.8;animation:floatStar linear infinite,twinkleSoft 2.4s ease-in-out infinite alternate;}
+.star.small{width:2px;height:2px;opacity:0.5}
+.star.big{width:6px;height:6px;animation:floatStar linear infinite,twinkleHard 1.8s ease-in-out infinite alternate;box-shadow:0 0 14px rgba(250,204,21,1)}
+@keyframes floatStar{0%{transform:translate3d(0,0,0);opacity:0}10%{opacity:0.8}100%{transform:translate3d(30px,-120vh,0);opacity:0}}
+@keyframes twinkleSoft{0%,100%{filter:brightness(1);box-shadow:0 0 8px rgba(250,204,21,0.7)}50%{filter:brightness(1.6);box-shadow:0 0 16px rgba(250,204,21,1)}}
+@keyframes twinkleHard{0%,100%{filter:brightness(0.8);box-shadow:0 0 6px rgba(250,204,21,0.6)}40%{filter:brightness(1.9);box-shadow:0 0 20px rgba(250,204,21,1)}}
+
+/* STAR POSITIONS */
+.star:nth-child(1){left:6%;bottom:-10%;animation-duration:26s;animation-delay:0s}
+.star:nth-child(2){left:18%;bottom:-12%;animation-duration:32s;animation-delay:-3s}
+.star:nth-child(3){left:32%;bottom:-8%;animation-duration:28s;animation-delay:-6s}
+.star:nth-child(4){left:47%;bottom:-15%;animation-duration:35s;animation-delay:-1.5s}
+.star:nth-child(5){left:61%;bottom:-9%;animation-duration:30s;animation-delay:-4s}
+.star:nth-child(6){left:74%;bottom:-13%;animation-duration:33s;animation-delay:-7s}
+.star:nth-child(7){left:87%;bottom:-11%;animation-duration:29s;animation-delay:-2s}
+.star:nth-child(8){left:12%;bottom:-18%;animation-duration:38s;animation-delay:-5s}
+.star:nth-child(9){left:39%;bottom:-17%;animation-duration:36s;animation-delay:-8s}
+.star:nth-child(10){left:68%;bottom:-19%;animation-duration:40s;animation-delay:-9s}
+
+/* LAYOUT */
+main{position:relative;z-index:2}
+.section-wrapper{position:relative;padding-inline:clamp(1.5rem,4vw,2rem)}
+
+/* SCROLL INDICATOR */
+.scroll-down{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--text-muted);font-size:.8rem;opacity:.85;cursor:pointer;text-decoration:none;animation:pulse 2s ease-in-out infinite;transition:opacity .3s ease;}
+.scroll-down:hover{opacity:1}
+.scroll-down span{letter-spacing:.18em;text-transform:uppercase;font-weight:400}
+.scroll-down .mouse{width:22px;height:34px;border-radius:16px;border:1.5px solid rgba(156,163,175,.9);display:flex;justify-content:center;align-items:flex-start;overflow:hidden}
+.scroll-down .wheel{width:3px;height:7px;margin-top:6px;border-radius:var(--radius-full);background:rgba(249,250,251,.9);animation:wheel 1.2s ease-in-out infinite}
+@keyframes wheel{0%{transform:translateY(0);opacity:1}80%,100%{transform:translateY(10px);opacity:0}}
+.scroll-down .arrow{width:10px;height:10px;border-left:1.5px solid rgba(156,163,175,.9);border-bottom:1.5px solid rgba(156,163,175,.9);transform:rotate(-45deg);animation:arrowBounce 1.2s ease-in-out infinite;margin-top:2px}
+@keyframes arrowBounce{0%,100%{transform:translateY(0) rotate(-45deg);opacity:.3}50%{transform:translateY(3px) rotate(-45deg);opacity:1}}
+@keyframes pulse{0%,100%{opacity:.85}50%{opacity:1}}
+
+/* HERO SECTION */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding-bottom:4rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5vw,4rem);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.75rem;font-variation-settings:'wght' 600;background:linear-gradient(120deg,#f9fafb 0%,#facc15 50%,#f97316 100%);-webkit-background-clip:text;color:transparent;text-shadow:0 0 40px rgba(250,204,21,.4)}
+.hero p{font-size:clamp(.95rem,2vw,1rem);color:var(--text-muted);max-width:380px;line-height:1.6}
+.hero::after{content:"";width:140px;height:1px;margin-top:22px;border-radius:var(--radius-full);background:linear-gradient(90deg,transparent,rgba(250,204,21,.7),transparent);box-shadow:0 0 18px rgba(250,204,21,.65)}
+
+/* SECTION TITLES */
+.section-title{text-align:center;margin-bottom:1.5rem;font-size:1.1rem;letter-spacing:.24em;text-transform:uppercase;color:var(--text-muted)}
+.section-title span{display:block;font-size:1.6rem;letter-spacing:.06em;color:#e5e7eb;font-weight:400;margin-top:.25rem}
+
+/* GLASS CARDS */
+.cards{display:flex;justify-content:center;gap:clamp(20px,4vw,28px);padding:40px 0 120px;flex-wrap:wrap}
+.glass-card{width:clamp(240px,28vw,260px);padding:24px 20px 20px;border-radius:var(--radius-lg);background:radial-gradient(circle at top left,rgba(30,64,175,.95),rgba(15,23,42,.98));border:1px solid var(--border-subtle);box-shadow:var(--shadow-soft);position:relative;overflow:hidden;backdrop-filter:blur(12px);transition:all .4s cubic-bezier(0.4,0,0.2,1)}
+.glass-card::before{content:"";position:absolute;inset:-60%;background:radial-gradient(circle at top,rgba(250,204,21,.2),transparent 70%);opacity:0;transition:opacity .45s ease,transform .45s ease}
+.glass-card:hover{transform:translateY(-12px) scale(1.02);box-shadow:0 32px 80px rgba(15,23,42,.95);border-color:rgba(250,204,21,.5)}
+.glass-card:hover::before{opacity:1;transform:scale(1.1)}
+.glass-card h3{font-size:1.05rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px;font-weight:500}
+.glass-card p{font-size:.92rem;color:var(--text-muted);line-height:1.55}
+
+/* FIXED MEME SECTION - PERFECT RESPONSIVE LAYOUT */
+.memes{padding:80px 0 120px}
+.meme-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.meme-card{background:rgba(15,23,42,.95);border-radius:20px;border:1px solid rgba(148,163,184,.35);box-shadow:0 20px 45px rgba(15,23,42,.92);overflow:hidden;transition:transform .3s ease,box-shadow .3s ease}
+.meme-card:hover{transform:translateY(-6px);box-shadow:0 28px 60px rgba(15,23,42,.98)}
+
+.meme-video-wrapper{width:100%;aspect-ratio:9/16;background:rgba(10,15,25,0.98);overflow:hidden;border-radius:20px 20px 0 0;position:relative;cursor:pointer;transition:background .3s ease}
+.meme-video-wrapper:hover{background:rgba(10,15,25,1)}
+.meme-media{width:100%;height:100%;object-fit:contain;object-position:center;display:block}
+
+/* FIXED OVERLAY - Z-INDEX PERFECT */
+.video-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;z-index:11;background:rgba(0,0,0,0);transition:background .3s ease}
+.meme-video-wrapper:hover .video-overlay,.meme-video-wrapper.paused .video-overlay{pointer-events:all;background:rgba(0,0,0,0.4);backdrop-filter:blur(8px)}
+
+/* PERFECTLY CENTERED PLAY/PAUSE - Z-INDEX 12 */
+.play-pause-overlay{
+  position:relative;z-index:12;
+  width:clamp(72px,12vw,84px);height:clamp(72px,12vw,84px);border-radius:50%;
+  background:rgba(0,0,0,0.85);backdrop-filter:blur(16px);
+  border:clamp(2.5px,0.6vw,3.5px) solid rgba(250,204,21,0.7);
+  display:flex;align-items:center;justify-content:center;color:#fff;transition:all .3s cubic-bezier(0.4,0,0.2,1);
+  opacity:0;transform:scale(0.9)
+}
+.meme-video-wrapper:hover .play-pause-overlay,.meme-video-wrapper.paused .play-pause-overlay{opacity:1;transform:scale(1)}
+.play-pause-overlay:hover{background:rgba(250,204,21,0.3);border-color:var(--accent);transform:scale(1.08)}
+.play-pause-overlay .material-icons{
+  font-size:clamp(28px,5vw,38px) !important;line-height:1 !important;
+  display:flex !important;align-items:center !important;justify-content:center !important;
+  width:100% !important;height:100% !important;margin:0 !important;padding:0 !important
+}
+
+/* MUTE BUTTON - FIXED Z-INDEX 13 + POSITION */
+.mute-overlay{
+  position:absolute;z-index:13 !important;
+  bottom:clamp(18px,4vw,26px);right:clamp(18px,4vw,26px);
+  width:clamp(48px,9vw,60px);height:clamp(48px,9vw,60px);border-radius:50%;
+  background:rgba(0,0,0,0.85);backdrop-filter:blur(16px);
+  border:clamp(2px,0.5vw,2.8px) solid rgba(250,204,21,0.6);
+  display:flex;align-items:center;justify-content:center;color:#fff;
+  font-size:clamp(20px,4vw,28px) !important;
+  cursor:pointer;transition:all .3s cubic-bezier(0.4,0,0.2,1);opacity:0;transform:scale(0.9);
+  pointer-events:auto !important
+}
+.meme-video-wrapper:hover .mute-overlay{opacity:1;transform:scale(1)}
+.mute-overlay:hover{background:rgba(250,204,21,0.3);border-color:var(--accent);transform:scale(1.12)}
+.mute-overlay .material-icons{
+  display:flex !important;align-items:center !important;justify-content:center !important;
+  width:100% !important;height:100% !important;margin:0 !important;padding:0 !important;
+  font-size:inherit !important;line-height:1 !important
+}
+.mute-overlay.muted .material-icons{color:#9ca3af}
+
+.meme-body{padding:16px 18px 18px;font-size:.88rem;color:var(--text-muted)}
+.meme-tag{display:inline-block;font-size:.72rem;text-transform:uppercase;letter-spacing:.18em;color:#e5e7eb;margin-bottom:6px;padding:4px 8px;background:rgba(250,204,21,.1);border-radius:12px;border:1px solid rgba(250,204,21,.2)}
+
+/* QUOTE SECTION - PERFECTLY CENTERED */
+.quote {
+  padding: 90px 20px 120px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.quote p {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  color: #e5e7eb;
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.4;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.quote p::before,
+.quote p::after {
+  content: "✦";
+  font-size: 1.1rem;
+  color: var(--accent);
+  opacity: 0.85;
+  flex-shrink: 0;
+  display: block;
+}
+
+/* NEW YEAR HERO - Simplifica Font + Music */
+.new-year{position:relative;height:clamp(420px,70vh,640px);background:radial-gradient(circle at bottom,rgba(56,189,248,.35),transparent 65%),radial-gradient(circle at top,rgba(251,191,36,.25),transparent 60%),#020617;overflow:hidden;border-radius:40px 40px 0 0;margin:0 clamp(10px,3vw,20px) clamp(20px,4vw,40px);border:1px solid rgba(148,163,184,.4);box-shadow:0 -12px 80px rgba(15,23,42,.95)}
+.new-year::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at bottom,rgba(15,23,42,.85),rgba(15,23,42,.98));mix-blend-mode:multiply;z-index:1}
+.new-year::after{content:"";position:absolute;left:50%;top:0;width:54%;height:1.5px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,var(--accent),transparent);box-shadow:0 0 28px rgba(250,204,21,1);opacity:.9;z-index:3}
+.ny-text{position:relative;z-index:4;font-family:"Simplifica", 'Playfair Display', serif;font-size:clamp(3rem,8vw,6rem);color:#f9fafb;text-align:center;margin-top:clamp(100px,20vh,160px);padding:0 20px;text-shadow:0 0 24px rgba(251,191,36,.95);animation:glowText 2.5s ease-in-out infinite alternate;letter-spacing:0.12em;text-transform:uppercase;font-weight:900;line-height:0.92}
+@keyframes glowText{from{text-shadow:0 0 20px rgba(251,191,36,.85),0 0 40px rgba(251,146,60,.75)}to{text-shadow:0 0 32px rgba(251,191,36,1),0 0 70px rgba(251,146,60,.95)}}
+
+/* Music Player Controls */
+.music-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+.new-year:hover .music-controls,
+.music-playing .music-controls {
+  opacity: 1;
+}
+.music-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(24px);
+  border: 2px solid rgba(250,204,21,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.music-btn:hover {
+  background: rgba(250,204,21,0.3);
+  border-color: var(--accent);
+  transform: scale(1.1);
+}
+.music-volume {
+  width: 80px;
+  height: 4px;
+  background: rgba(156,163,184,0.4);
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  appearance: none;
+}
+.music-volume::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: var(--accent);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#fireworks{position:absolute;inset:0;z-index:2}
+
+/* SCROLL FADE */
+.fade{opacity:0;transform:translateY(30px);transition:all .85s cubic-bezier(0.4,0,0.2,1)}
+.fade.show{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .meme-grid{gap:24px}
+  .play-pause-overlay{width:78px;height:78px}
+  .mute-overlay{width:54px;height:54px;bottom:22px;right:22px}
+}
+
+@media(max-width:768px){
+  .cards{padding:40px 0 100px;gap:20px;flex-direction:column;align-items:center}
+  .glass-card{width:100%;max-width:340px}
+  .meme-grid{grid-template-columns:1fr;gap:24px;max-width:400px;margin:0 auto}
+  .meme-video-wrapper{border-radius:24px 24px 0 0}
+  .play-pause-overlay{width:72px;height:72px;border-width:2.8px}
+  .play-pause-overlay .material-icons{font-size:32px !important}
+  .mute-overlay{width:50px;height:50px;bottom:20px;right:20px;font-size:24px;border-width:2.2px}
+  .quote{padding:70px 18px 100px}
+  .new-year{margin:0;border-radius:32px 32px 0 0}
+  .ny-text{font-size:clamp(2.8rem,9vw,5rem);letter-spacing:0.1em}
+}
+
+@media(max-width:480px){
+  .section-wrapper{padding-inline:1rem}
+  .meme-grid{gap:20px}
+  .play-pause-overlay{width:64px;height:64px;border-width:2.5px}
+  .play-pause-overlay .material-icons{font-size:28px !important}
+  .mute-overlay{width:44px;height:44px;bottom:16px;right:16px;font-size:22px;border-width:2px}
+  .cards{padding-bottom:80px}
+  .ny-text{font-size:clamp(2.6rem,10vw,4.5rem);letter-spacing:0.08em;line-height:0.95}
+}
+
+@media(max-width:360px){
+  .play-pause-overlay{width:60px;height:60px}
+  .play-pause-overlay .material-icons{font-size:26px !important}
+  .mute-overlay{width:42px;height:42px;bottom:14px;right:14px;font-size:20px}
+  .ny-text{letter-spacing:0.06em;font-size:clamp(2.4rem,11vw,4rem)}
+}
+
+/* MOBILE PERFORMANCE - REDUCE BLUR */
+@media(max-width:768px){
+  .video-overlay{backdrop-filter:blur(4px)}
+  .play-pause-overlay,.mute-overlay{backdrop-filter:blur(8px)}
+}
+
+/* ACCESSIBILITY */
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:transform .2s ease!important}.star{animation:none!important;background:rgba(248,250,252,.6)}}
+</style>
+</head>
+<body>
+
+<!-- STARFIELD -->
+<div class="star-field">
+  <div class="star small"></div><div class="star big"></div><div class="star"></div>
+  <div class="star small"></div><div class="star"></div><div class="star big"></div>
+  <div class="star"></div><div class="star small"></div><div class="star big"></div>
+  <div class="star"></div>
+</div>
+
+<main>
+  <!-- HERO -->
+  <section id="hero" class="section-wrapper">
+    <div class="hero fade">
+      <h1>New Beginnings</h1>
+      <p>Soft moments, gentle growth, calm energy. Here's to 2026.</p>
+    </div>
+    <a href="#wishes" class="scroll-down" aria-label="Scroll to wishes">
+      <div class="mouse"><div class="wheel"></div></div>
+      <div class="arrow"></div><span>Scroll</span>
+    </a>
+  </section>
+
+  <!-- WARM WISHES -->
+  <section id="wishes" class="section-wrapper">
+    <div class="fade">
+      <br/>
+      <div class="section-title">
+        for your people
+        <span>Warm Wishes</span>
+      </div>
+      <div class="cards">
+        <div class="glass-card">
+         <h3>✨ Soft Start</h3>
+         <p>May your 2026 be slow, gentle and exactly the pace your heart can hold.</p>
+        </div>
+        <div class="glass-card">
+         <h3>🌿 Calm Days</h3>
+         <p>Less chaos, more quiet joy, and tiny pockets of peace throughout the year.</p>
+        </div>
+        <div class="glass-card">
+         <h3>💫 Silent Wins</h3>
+         <p>May your growth be loud in impact and soft in pressure. Quietly extraordinary.</p>
+        </div>
+      </div>
+    </div>
+    <br/><br/><br/><br/><br/><br/>
+    <a href="#memes" class="scroll-down" aria-label="Scroll to memes">
+      <div class="mouse"><div class="wheel"></div></div>
+      <div class="arrow"></div><span style="text-align: center;">Scroll <br/> MEME</span>
+    </a>
+  </section>
+
+  <!-- FIXED MEME LOUNGE -->
+  <section id="memes" class="section-wrapper">
+    <div class="memes fade">
+      <div class="section-title">
+        for the group chat
+        <span>Meme Lounge</span>
+      </div>
+      <div class="meme-grid">
+        <!-- First meme -->
+        <article class="meme-card">
+          <div class="meme-video-wrapper paused" data-video>
+            <video class="meme-media" muted loop playsinline preload="metadata" src="assets/video/+9999 aura.mp4"></video>
+            <div class="video-overlay">
+              <div class="play-pause-overlay paused" data-action="play-pause" aria-label="Play video">
+                <span class="material-icons">play_arrow</span>
+              </div>
+            </div>
+            <button class="mute-overlay" data-action="mute" title="Mute" aria-label="Toggle mute">
+              <span class="material-icons">volume_up</span>
+            </button>
+          </div>
+          <div class="meme-body">
+            <div class="meme-tag">New Year Resolution</div>
+            <p>"From 1st Jan I'll change" – also you, every year since 2012.</p>
+          </div>
+        </article>
+
+        <!-- Second meme -->
+        <article class="meme-card">
+          <div class="meme-video-wrapper paused" data-video>
+            <video class="meme-media" muted loop playsinline preload="metadata" src="assets\video\Pookie badmash.mp4"></video>
+            <div class="video-overlay">
+              <div class="play-pause-overlay paused" data-action="play-pause" aria-label="Play video">
+                <span class="material-icons">play_arrow</span>
+              </div>
+            </div>
+            <button class="mute-overlay" data-action="mute" title="Mute" aria-label="Toggle mute">
+              <span class="material-icons">volume_up</span>
+            </button>
+          </div>
+          <div class="meme-body">
+            <div class="meme-tag">Unbothered Friend</div>
+            <p>When the world is on fire but your vibe is on "Do Not Disturb".</p>
+          </div>
+        </article>
+
+        <!-- Third meme - image -->
+        <article class="meme-card">
+          <img class="meme-media" src="images/meme-growth.jpg" alt="Growth meme" loading="lazy">
+          <div class="meme-body">
+            <div class="meme-tag">Character Development</div>
+            <p>Me in Jan: "New me." Also me in Feb: same season 3 character arc.</p>
+          </div>
+        </article>
+
+        <!-- Fourth meme -->
+        <article class="meme-card">
+          <div class="meme-video-wrapper paused" data-video>
+            <video class="meme-media" muted loop playsinline preload="metadata" src="videos/meme-chaos.mp4"></video>
+            <div class="video-overlay">
+              <div class="play-pause-overlay paused" data-action="play-pause" aria-label="Play video">
+                <span class="material-icons">play_arrow</span>
+              </div>
+            </div>
+            <button class="mute-overlay" data-action="mute" title="Mute" aria-label="Toggle mute">
+              <span class="material-icons">volume_up</span>
+            </button>
+          </div>
+          <div class="meme-body">
+            <div class="meme-tag">Party Mode</div>
+            <p>When you say "last round" for the 5th time and 2026 is already judging.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <br/>
+    <a href="#quote" class="scroll-down" aria-label="Scroll to quote">
+      <div class="mouse"><div class="wheel"></div></div>
+      <div class="arrow"></div><span style="text-align: center;">Scroll <br/> Celebrate</span>
+    </a>
+  </section>
+
+  <!-- QUOTE -->
+  <section id="quote" class="section-wrapper">
+    <div class="quote fade">
+      <p>"This year, choose yourself gently."</p>
+    </div>
+  </section>
+
+  <!-- NEW YEAR FIREWORKS WITH MUSIC -->
+  <section id="newyear" class="section-wrapper">
+    <div class="new-year music-section">
+      <h2 class="ny-text">Happy New Year 2026</h2>
+      
+      <!-- Hidden Audio Player -->
+      <audio id="newyear-music" loop preload="metadata">
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+      </audio>
+      
+      <!-- Music Controls -->
+      <div class="music-controls">
+        <button class="music-btn" id="music-toggle" title="Play New Year Music" aria-label="Toggle music">
+          <span class="material-icons">play_circle_filled</span>
+        </button>
+        <input type="range" class="music-volume" id="music-volume" min="0" max="1" step="0.1" value="0.7">
+        <button class="music-btn" id="music-mute" title="Mute" aria-label="Toggle mute">
+          <span class="material-icons">volume_up</span>
+        </button>
+      </div>
+      
+      <canvas id="fireworks" aria-label="Interactive fireworks animation"></canvas>
+    </div>
+  </section>
+</main>
+
+<script>
+/* SCROLL FADE */
+const faders = document.querySelectorAll(".fade");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add("show");
+  });
+}, { threshold: .15 });
+faders.forEach(f => observer.observe(f));
+
+/* PERFECT VIDEO CONTROLS - FIXED AUDIO + Z-INDEX */
+document.querySelectorAll('[data-video]').forEach(wrapper => {
+  const video = wrapper.querySelector('video');
+  const playPauseOverlay = wrapper.querySelector('.play-pause-overlay');
+  const muteBtn = wrapper.querySelector('.mute-overlay');
+  
+  // FIXED: Force proper muted state + attributes
+  video.muted = true;
+  video.setAttribute('muted', '');
+  
+  // Initialize states
+  wrapper.classList.add('paused');
+  playPauseOverlay.classList.add('paused');
+  
+  wrapper.addEventListener('mouseenter', () => wrapper.style.cursor = 'pointer');
+  wrapper.addEventListener('mouseleave', () => { if (video.paused) wrapper.style.cursor = 'default'; });
+  
+  const togglePlayPause = () => {
+    if (video.paused) {
+      video.play().catch(e => console.log('Play failed:', e));
+      wrapper.classList.remove('paused');
+      playPauseOverlay.classList.remove('paused');
+      playPauseOverlay.querySelector('.material-icons').textContent = 'pause';
+    } else {
+      video.pause();
+      wrapper.classList.add('paused');
+      playPauseOverlay.classList.add('paused');
+      playPauseOverlay.querySelector('.material-icons').textContent = 'play_arrow';
+    }
+  };
+  
+  // Wrapper click (play/pause - exclude mute button)
+  wrapper.addEventListener('click', (e) => {
+    if (e.target.closest('.mute-overlay')) return;
+    togglePlayPause();
+  });
+  
+// Play button click
+playPauseOverlay.addEventListener('click', (e) => {
+  e.stopPropagation();
+
+  // 🔴 Pause background music if playing
+  if (typeof musicPlayer !== "undefined" && !musicPlayer.paused) {
+    musicPlayer.pause();
+  }
+
+  // 🔊 Ensure meme audio is enabled on user interaction
+  video.muted = false;
+  video.removeAttribute('muted');
+
+  togglePlayPause();
+});
+
+
+// FIXED MUTE BUTTON — CLEAN & RELIABLE
+muteBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  e.preventDefault();
+
+  video.muted = !video.muted;
+
+  const icon = muteBtn.querySelector('.material-icons');
+
+  if (video.muted) {
+    muteBtn.classList.add('muted');
+    icon.textContent = 'volume_off';
+    muteBtn.title = 'Unmute';
+    video.setAttribute('muted', '');
+  } else {
+    muteBtn.classList.remove('muted');
+    icon.textContent = 'volume_up';
+    muteBtn.title = 'Mute';
+    video.removeAttribute('muted');
+  }
+});
+  
+  // Video event listeners for state sync
+  video.addEventListener('play', () => {
+    wrapper.classList.remove('paused');
+    playPauseOverlay.classList.remove('paused');
+    playPauseOverlay.querySelector('.material-icons').textContent = 'pause';
+  });
+  
+  video.addEventListener('pause', () => {
+    wrapper.classList.add('paused');
+    playPauseOverlay.classList.add('paused');
+    playPauseOverlay.querySelector('.material-icons').textContent = 'play_arrow';
+  });
+  
+  video.addEventListener('volumechange', () => {
+    const icon = muteBtn.querySelector('.material-icons');
+    if (video.muted) {
+      muteBtn.classList.add('muted');
+      icon.textContent = 'volume_off';
+      muteBtn.title = 'Unmute';
+    } else {
+      muteBtn.classList.remove('muted');
+      icon.textContent = 'volume_up';
+      muteBtn.title = 'Mute';
+    }
+  });
+  
+  // MOBILE TOUCH SUPPORT
+  wrapper.addEventListener('touchstart', (e) => {
+    if (e.target.closest('.mute-overlay')) return;
+    e.preventDefault();
+    togglePlayPause();
+  }, { passive: false });
+});
+
+/* NEW YEAR MUSIC PLAYER */
+const musicSection = document.querySelector('.music-section');
+const musicPlayer = document.getElementById('newyear-music');
+const musicToggle = document.getElementById('music-toggle');
+const musicMute = document.getElementById('music-mute');
+const musicVolume = document.getElementById('music-volume');
+
+let musicPlaying = false;
+
+// Auto-play when section becomes visible
+const musicObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !musicPlaying) {
+      musicPlayer.play().then(() => {
+        musicPlaying = true;
+        musicSection.classList.add('music-playing');
+        updateMusicUI();
+      }).catch(() => {
+        console.log('Autoplay blocked - click play button');
+      });
+    }
+  });
+}, { threshold: 0.3 });
+
+musicObserver.observe(musicSection);
+
+// Music Toggle
+musicToggle.addEventListener('click', () => {
+  if (musicPlaying) {
+    musicPlayer.pause();
+  } else {
+    musicPlayer.play();
+  }
+});
+
+// Music Events
+musicPlayer.addEventListener('play', () => {
+  musicPlaying = true;
+  musicSection.classList.add('music-playing');
+  updateMusicUI();
+});
+
+musicPlayer.addEventListener('pause', () => {
+  musicPlaying = false;
+  musicSection.classList.remove('music-playing');
+  updateMusicUI();
+});
+
+// Mute Toggle
+musicMute.addEventListener('click', () => {
+  musicPlayer.muted = !musicPlayer.muted;
+  updateMusicUI();
+});
+
+musicPlayer.addEventListener('volumechange', updateMusicUI);
+
+// Volume Slider
+musicVolume.addEventListener('input', (e) => {
+  musicPlayer.volume = e.target.value;
+  updateMusicUI();
+});
+musicVolume.value = 0.7;
+
+function updateMusicUI() {
+  // Play/Pause button
+  const icon = musicToggle.querySelector('.material-icons');
+  if (musicPlaying) {
+    icon.textContent = 'pause_circle_filled';
+    musicToggle.title = 'Pause music';
+  } else {
+    icon.textContent = 'play_circle_filled';
+    musicToggle.title = 'Play music';
+  }
+  
+  // Mute button
+  const muteIcon = musicMute.querySelector('.material-icons');
+  if (musicPlayer.muted) {
+    muteIcon.textContent = 'volume_off';
+    musicMute.title = 'Unmute';
+  } else {
+    muteIcon.textContent = 'volume_up';
+    musicMute.title = 'Mute';
+  }
+  
+  // Volume slider
+  musicVolume.value = musicPlayer.volume;
+}
+
+/* FIREWORKS */
+const canvas = document.getElementById("fireworks"), ctx = canvas.getContext("2d");
+function resize() { canvas.width = window.innerWidth; canvas.height = canvas.parentElement.offsetHeight }
+resize(); window.addEventListener("resize", resize);
+
+function random(min, max) { return Math.random() * (max - min) + min }
+
+class Particle {
+  constructor(x, y, color, speed, angle) {
+    this.x = x; this.y = y; this.speed = speed; this.angle = angle;
+    this.friction = .975; this.gravity = .018; this.alpha = 1;
+    this.decay = random(.016, .028); this.color = color;
+    this.radius = random(1.4, 2.4); this.vx = Math.cos(angle) * speed;
+    this.vy = Math.sin(angle) * speed;
+  }
+  update() {
+    this.vx *= this.friction; this.vy *= this.friction;
+    this.vy += this.gravity; this.x += this.vx; this.y += this.vy;
+    this.alpha -= this.decay;
+  }
+  draw(ctx) {
+    ctx.save(); ctx.globalAlpha = this.alpha;
+    const g = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius * 3);
+    g.addColorStop(0, "rgba(255,255,255,0.95)"); g.addColorStop(.25, this.color);
+    g.addColorStop(1, "rgba(0,0,0,0)"); ctx.fillStyle = g;
+    ctx.beginPath(); ctx.arc(this.x, this.y, this.radius * 3, 0, Math.PI * 2); ctx.fill();
+    ctx.restore();
+  }
+  get dead() { return this.alpha <= 0 }
+}
+
+class Firework {
+  constructor(startX, startY, targetX, targetY, color) {
+    this.x = startX; this.y = startY; this.tx = targetX; this.ty = targetY;
+    this.color = color; this.speed = 5.8;
+    this.angle = Math.atan2(targetY - startY, targetX - startX);
+    this.distanceToTarget = distance(startX, startY, targetX, targetY);
+    this.traveled = 0; this.exploded = false;
+  }
+  update(particlesArray) {
+    if (this.exploded) return;
+    const vx = Math.cos(this.angle) * this.speed, vy = Math.sin(this.angle) * this.speed;
+    this.x += vx; this.y += vy;
+    this.traveled = distance(this.x, this.y, this.tx, this.ty);
+    ctx.save(); ctx.fillStyle = this.color; ctx.shadowBlur = 16; ctx.shadowColor = this.color;
+    ctx.beginPath(); ctx.arc(this.x, this.y, 2.2, 0, Math.PI * 2); ctx.fill();
+    ctx.globalAlpha = .4; ctx.shadowBlur = 10;
+    ctx.beginPath(); ctx.arc(this.x, this.y + 10, 1.6, 0, Math.PI * 2); ctx.fill();
+    ctx.restore();
+    if (this.traveled >= this.distanceToTarget * .97) {
+      this.exploded = true; this.explode(particlesArray);
+    }
+  }
+
+  explode(particlesArray) {
+    const count = 85;
+    for (let i = 0; i < count; i++) {
+      const angle = (Math.PI * 2 * i) / count + random(-.18, .18), speed = random(2.6, 5.8);
+      particlesArray.push(new Particle(this.tx, this.ty, this.color, speed, angle));
+    }
+  }
+}
+function distance(x1, y1, x2, y2) {
+  const dx = x2 - x1, dy = y2 - y1; return Math.sqrt(dx * dx + dy * dy);
+}
+
+const fireworks = [], particles = [];
+function spawnFirework() {
+  const startX = random(canvas.width * .2, canvas.width * .8),
+        startY = canvas.height + 20,
+        targetX = random(canvas.width * .15, canvas.width * .85),
+        targetY = random(canvas.height * .15, canvas.height * .45),
+        color = `hsl(${random(0, 360)},100%,65%)`;
+  fireworks.push(new Firework(startX, startY, targetX, targetY, color));
+}
+
+canvas.addEventListener("click", e => {
+  const rect = canvas.getBoundingClientRect(),
+        targetX = e.clientX - rect.left,
+        targetY = e.clientY - rect.top,
+        startX = random(canvas.width * .3, canvas.width * .7),
+        startY = canvas.height + 20,
+        color = `hsl(${random(0, 360)},100%,65%)`;
+  fireworks.push(new Firework(startX, startY, targetX, targetY, color));
+});
+
+function animate() {
+  requestAnimationFrame(animate);
+  ctx.fillStyle = "rgba(2,6,23,0.22)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  if (Math.random() < .035) spawnFirework();
+  for (let i = fireworks.length - 1; i >= 0; i--) {
+    fireworks[i].update(particles);
+    if (fireworks[i].exploded) fireworks.splice(i, 1);
+  }
+  for (let i = particles.length - 1; i >= 0; i--) {
+    const p = particles[i];
+    p.update(); p.draw(ctx);
+    if (p.dead) particles.splice(i, 1);
+  }
+}
+animate();
+</script>
+
+</body>
+</html>
