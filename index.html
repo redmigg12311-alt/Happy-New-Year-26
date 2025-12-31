@@ -102,9 +102,47 @@ main{position:relative;z-index:2}
 .glass-card h3{font-size:clamp(0.95rem,2vw,1.05rem);letter-spacing:.05em;text-transform:uppercase;margin-bottom:12px;font-weight:500}
 .glass-card p{font-size:clamp(0.85rem,1.6vw,0.92rem);color:var(--text-muted);line-height:1.55}
 
-/* COMPACT MEME SECTION */
+/* COMPACT MEME SECTION - BLUR REMOVED */
 .memes{padding:clamp(4rem,8vh,6rem) 0 clamp(6rem,10vh,8rem)}
-.meme-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(20px,3vw,26px);max-width:1200px;margin:0 auto}
+.meme-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: clamp(20px, 3vw, 26px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .meme-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  .meme-video-wrapper {
+    max-height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .meme-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 320px;
+  }
+  .meme-video-wrapper {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 360px) {
+  .meme-grid {
+    max-width: 300px;
+    gap: 14px;
+  }
+  .meme-video-wrapper {
+    max-height: 260px;
+  }
+}
+
 .meme-card{background:rgba(15,23,42,.95);border-radius:18px;border:1px solid rgba(148,163,184,.3);box-shadow:0 16px 40px rgba(15,23,42,.9);overflow:hidden;transition:transform .35s ease,box-shadow .35s ease;position:relative}
 .meme-card:hover{transform:translateY(-8px);box-shadow:0 24px 55px rgba(15,23,42,.98)}
 
@@ -113,12 +151,13 @@ main{position:relative;z-index:2}
 .meme-media{width:100%;height:100%;object-fit:contain;object-position:center;display:block}
 
 .video-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;z-index:11;background:rgba(0,0,0,0);transition:background .35s ease}
-.meme-video-wrapper:hover .video-overlay,.meme-video-wrapper.paused .video-overlay{pointer-events:all;background:rgba(0,0,0,0.45);backdrop-filter:blur(10px)}
+/* BLUR EFFECT REMOVED FROM VIDEO OVERLAY */
+.meme-video-wrapper:hover .video-overlay,.meme-video-wrapper.paused .video-overlay{pointer-events:all;background:rgba(0,0,0,0.45)}
 
 .play-pause-overlay{
   position:relative;z-index:12;
   width:clamp(56px,10vw,72px);height:clamp(56px,10vw,72px);border-radius:50%;
-  background:rgba(0,0,0,0.9);backdrop-filter:blur(20px);
+  background:rgba(0,0,0,0.9);
   border:clamp(2px,0.5vw,3px) solid rgba(250,204,21,0.8);
   display:flex;align-items:center;justify-content:center;color:#fff;transition:all .35s cubic-bezier(0.4,0,0.2,1);
   opacity:0;transform:scale(0.85)
@@ -135,7 +174,7 @@ main{position:relative;z-index:2}
   position:absolute;z-index:13 !important;
   bottom:clamp(14px,3vw,22px);right:clamp(14px,3vw,22px);
   width:clamp(42px,8vw,52px);height:clamp(42px,8vw,52px);border-radius:50%;
-  background:rgba(0,0,0,0.9);backdrop-filter:blur(20px);
+  background:rgba(0,0,0,0.9);
   border:clamp(1.8px,0.4vw,2.5px) solid rgba(250,204,21,0.7);
   display:flex;align-items:center;justify-content:center;color:#fff;
   font-size:clamp(18px,3.5vw,26px) !important;
@@ -192,8 +231,9 @@ main{position:relative;z-index:2}
   .quote{padding:clamp(4rem,8vh,6rem) clamp(1rem,2.5vw,1.5rem) clamp(5rem,9vh,7rem)}
   .new-year{margin:0 clamp(6px,2vw,12px) clamp(12px,2.5vw,24px);border-radius:28px 28px 0 0}
   .ny-text{font-size:clamp(2.5rem,8.5vw,4.8rem);letter-spacing:0.09em;line-height:0.96}
-  .video-overlay{backdrop-filter:blur(6px)}
-  .play-pause-overlay,.mute-overlay{backdrop-filter:blur(12px)}
+  /* NO BLUR ON MOBILE VIDEO OVERLAY */
+  .video-overlay{background:rgba(0,0,0,0.45)}
+  .play-pause-overlay,.mute-overlay{backdrop-filter:none}
 }
 
 @media(max-width:480px){
@@ -215,8 +255,8 @@ main{position:relative;z-index:2}
 
 /* PERFORMANCE */
 @media(max-width:768px){
-  .video-overlay{backdrop-filter:blur(5px)}
-  .play-pause-overlay,.mute-overlay{backdrop-filter:blur(10px)}
+  .video-overlay{backdrop-filter:none}
+  .play-pause-overlay,.mute-overlay{backdrop-filter:none}
 }
 
 /* ACCESSIBILITY */
@@ -324,7 +364,15 @@ main{position:relative;z-index:2}
 
         <!-- Third meme - image -->
         <article class="meme-card">
-         <img class="meme-media" src="images/meme-growth.jpg" alt="Growth meme" loading="lazy">
+         <img class="meme-media" src="https://instagram.famd5-2.fna.fbcdn.net/v/t51.82787-15/608284567_18425949112114897_2142302520230764062_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=1&ig_cache_key=Mzc5ODkzNjAwNDkyNjIxOTA4Nw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTc5Ni5zZHIuQzMifQ%3D%3D&_nc_ohc=5QqTtOzydOIQ7kNvwF8J2XA&_nc_oc=Adn7U-et6Wit0HkpPrlR-9JCldC8MoKaGCcKH0hJXVlC-R8ujcU6pY94JePNPV2BAQ2Afpiu-RALhIZx8bGANt2H&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=instagram.famd5-2.fna&_nc_gid=NmKLzuDgZssX60b4yiBR1Q&oh=00_AfmjGq1PxInb9MwYJnmOUPBTdZT2ySP7Wz8ZMy9siNOGXA&oe=695B158C" alt="Growth meme" loading="lazy">
+         <div class="meme-body">
+           <div class="meme-tag">Character Development</div>
+           <p>Me in Jan: "New me." Also me in Feb: same season 3 character arc.</p>
+         </div>
+        </article>
+
+        <article class="meme-card">
+         <img class="meme-media" src="https://instagram.famd5-1.fna.fbcdn.net/v/t51.82787-15/573588748_18417564103114897_1372390921248395623_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ig_cache_key=Mzc1NTM2ODAwNTk2NzY1Mzc4Mg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTc5Ni5zZHIuQzMifQ%3D%3D&_nc_ohc=IPBBlFIJnB0Q7kNvwHqxpjl&_nc_oc=AdmuWgqiVyCvH5UoAqY0G0ZypNwK1VXJg6ZFBEOsNCNWXyVFst-sC9fOeKO6Hm-dei4xvSZnK-bv7QntTxeUSqRE&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=instagram.famd5-1.fna&_nc_gid=ShthWHjD-5q998uEkVKd7Q&oh=00_Afl_jzkCleeGhOO_VtilS83H-Q27PLQvThwqltptaVl3xw&oe=695B102B" alt="Growth meme" loading="lazy">
          <div class="meme-body">
            <div class="meme-tag">Character Development</div>
            <p>Me in Jan: "New me." Also me in Feb: same season 3 character arc.</p>
